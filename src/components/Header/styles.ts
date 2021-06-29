@@ -6,7 +6,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: left;
     //font-family: 'Roboto Condensed', sans-serif;
-    padding: 2rem 0 3rem;
+    padding: 1rem 0 3rem;
     color: var(--titles);
 
         h1{
