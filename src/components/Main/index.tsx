@@ -1,9 +1,10 @@
+import { Summary } from "../Summary";
 import { Container } from "./styles";
 
 export function Main() {
     return (
         <Container>
-            <h1>LOCALIZA</h1>
+            <Summary />
         </Container>
     );
 }

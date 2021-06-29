@@ -7,6 +7,8 @@ export const GlobalStyle = createGlobalStyle`
         --titles: #FFFFFF;
         --titleStore: #333333;
         --gridTextTitle: #3F3F3F;
+        --green: #1BBB16;
+
     }
 
     * {
