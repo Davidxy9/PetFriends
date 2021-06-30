@@ -27,12 +27,13 @@ export const Content = styled.div`
     margin: 50px 0;
     border-radius: 10px;
 
-        div {
+        button {
             flex: 1 1 100px;
              padding-top: 10px;
              padding-left: 10px;
              padding-right: 10px;
              max-width: 170px;
+             background: #FFFF;
         }
 `;
 

@@ -1,9 +1,14 @@
 import { Container, Content, Separator } from "./styles"
-import imgTest from '../../assets/imageTeste.svg';
-
+import imgTest2 from '../../assets/imageTeste2.png';
+import { useEffect } from "react";
+import { api } from "../../services/api";
 
 export function Product() {
 
+    useEffect(() => {
+        api.get('products')
+            .then(response => console.log(response.data))
+    },[]);
 
     return (
         <Separator>
@@ -17,30 +22,30 @@ export function Product() {
 
             </Container>
             <Content>
-                <div>
-                    <img src={imgTest} alt="Imagem provisória" />
+                <button>
+                    <img src={imgTest2} alt="Imagem provisória" />
                     <strong>Shampoo Tradicional I Love Pet 5 Litros</strong>
-                </div>
+                </button>
 
-                <div>
-                    <img src={imgTest} alt="Imagem provisória" />
+                <button>
+                    <img src={imgTest2} alt="Imagem provisória" />
                     <strong>Shampoo Tradicional I Love Pet 5 Litros</strong>
-                </div>
+                </button>
 
-                <div>
-                    <img src={imgTest} alt="Imagem provisória" />
+                <button>
+                    <img src={imgTest2} alt="Imagem provisória" />
                     <strong>Shampoo Tradicional I Love Pet 5 Litros</strong>
-                </div>
+                </button>
 
-                <div>
-                    <img src={imgTest} alt="Imagem provisória" />
+                <button>
+                    <img src={imgTest2} alt="Imagem provisória" />
                     <strong>Shampoo Tradicional I Love Pet 5 Litros</strong>
-                </div>
+                </button>
 
-                <div>
-                    <img src={imgTest} alt="Imagem provisória" />
+                <button>
+                    <img src={imgTest2} alt="Imagem provisória" />
                     <strong>Shampoo Tradicional I Love Pet 5 Litros</strong>
-                </div>
+                </button>
 
             </Content>
         </Separator>
