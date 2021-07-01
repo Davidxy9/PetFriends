@@ -1,12 +1,20 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    background: var(--titles);
-    display: grid;
-    align-items: center;
+  background: var(--titles);
+  display: flex;
+  padding: 2rem 5rem 0rem 5rem;
+  @media (max-width: 600px) {
+    padding: 1rem;
+  }
 
-  @media (min-width: 600px) {
-    grid-template-columns: auto auto auto;
+  img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: #b41c8b;
+    margin-right: 1rem;
   }
 `;
 
@@ -17,72 +25,70 @@ export const ContainerInicio = styled.div`
   margin-bottom: 1rem;
 
   strong {
-    font-size: 28px;
+    font-size: 1.8rem;
   }
 
-  img {
+  svg {
     margin-left: 1rem;
     height: 1rem;
     margin-right: 0.1rem;
   }
 
   p {
-    font-size: 12px;
+    font-size: 0.7rem;
+
     font-weight: bold;
     color: var(--green);
   }
 `;
 
 export const ContainerCarrinho = styled.div`
-  display: grid;
-  /* margin-left: 1rem; */
-  grid-template-columns: auto auto;
-
-  grid-template-areas: 'imagem notificao' '. valor';
-
-  align-items: center;
-  justify-content: center;
-
-  img {
-    margin-right: 1rem;
-
-    grid-area: imagem;
+  @media (max-width: 600px) {
+    display: none;
   }
 
-  span {
-    grid-area: notificao;
+  align-self: center;
+
+  svg {
+    margin-right: 1rem;
   }
 
   p {
-    grid-area: valor;
+    margin: 0 2rem 0 2rem;
   }
 `;
 
 export const CardMeio = styled.div`
-  @media (min-width: 600px) {
-    border-right: 1px solid #ececec;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
+  margin: 0 auto 0 2rem;
+`;
+
+export const LinhaMeio = styled.div`
+  @media (max-width: 600px) {
+    display: none;
   }
 
-  @media (max-width: 590px) {
-    border-bottom: 1px solid #ececec;
-    /* margin: 5px; */
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-  }
+  border-right: 1px solid #ececec;
+  width: 10px;
+  margin: 0 2rem 0 2rem;
 `;
 
 export const Opt = styled.div`
-  display: flex;
-  margin-top: 1rem;
+  /* display: grid; */
+  /* grid-template-columns: 1fr 2fr; */
 
-  span {
-    margin-right: 0.5rem;
-  }
-  p {
-    margin-right: 4rem;
+  display: flex;
+  /* align-self: flex-end; */
+
+  @media (min-width: 600px) {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    span {
+      margin-right: 0.5rem;
+      margin-left: 0.2rem;
+    }
+    p {
+      margin-right: 4rem;
+    }
   }
 `;

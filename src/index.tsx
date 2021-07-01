@@ -43,7 +43,14 @@ createServer({
           title: 'Mordedor de pelúcida Jacaré - Multi Squeaker',
           img: 'https://www.petlove.com.br/images/products/230776/product/Brinquedo_Mordedor_Pel%C3%BAcia_Jacar%C3%A9_Multi_Squeaker_2555550.jpg?1602099153',
           amount: 72.20,
-          off: ' ̶R̶$̶8̶0̶,̶2̶2̶',
+          off: 'De R̶$̶8̶0̶,̶2̶2̶',
+          type: 'toy'
+        },
+        {
+          id: 5,
+          title: 'Ração Magnus Chips - Para Cães adultos, 15kg',
+          img: 'https://www.petlove.com.br/images/products/225089/product/311733.jpg?1593521736',
+          amount: 87.93,
           type: 'toy'
         }
       ]

@@ -1,8 +1,9 @@
 import { Container, Content, Separator } from "./styles"
 import Modal from 'react-modal';
-import imgTest2 from '../../assets/imageTeste2.png';
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
+import { BsSearch } from 'react-icons/bs';
+
 import { Toys } from "./Toys";
 
 interface ProductsData {
@@ -14,7 +15,7 @@ interface ProductsData {
     off?: string;
 }
 
-interface dataPropsTitle {
+interface IdataSaveForModal {
     title?: string;
     img?: string;
     id?: number;
@@ -26,8 +27,7 @@ interface dataPropsTitle {
 export function Product() {
     const [isAddProductModalOpen, setIsAddProductModalOpen] = useState(false);
     const [listProducts, setListProducts] = useState<ProductsData[]>([]);
-    const [dataSaveTitle, setDataSaveTitle] = useState({} as dataPropsTitle);
-    const [dataSaveImg, setDataSaveImg] = useState();
+    const [dataSaveForModal, setDataSaveForModal] = useState({} as IdataSaveForModal);
 
 
     useEffect(() => {
@@ -44,38 +44,34 @@ export function Product() {
     }
 
   
-    function testeId(id: number) {
-        const finalmenteID = listProducts.find(product => product.id === id)
-        const vai = {
-            title: finalmenteID?.title,
-            img: finalmenteID?.img,
-            amount: finalmenteID?.amount,
-            off: finalmenteID?.off,
-            type: finalmenteID?.type,
-            id: finalmenteID?.id
+    function getProduct(id: number) {
+        const searchProductSelected = listProducts.find(product => product.id === id)
+        const objectsForModal = {
+            title: searchProductSelected?.title,
+            img: searchProductSelected?.img,
+            amount: searchProductSelected?.amount,
+            off: searchProductSelected?.off,
+            type: searchProductSelected?.type,
+            id: searchProductSelected?.id
 
         }
 
-        setDataSaveTitle(vai)
+        setDataSaveForModal(objectsForModal)
     }
 
 
     return (
-        <Separator>
-            <Container>
+        <Container>
+      <Separator>
+        <BsSearch />
+        <input placeholder='O que você procura?' />
+      </Separator>
 
-                <input placeholder="O que você procura?">
-
-
-                </input>
-
-                Sugestões do vendedor
-            </Container>
             <Content>
                 {listProducts.map(product => (
                     <button
                     key={product.id}
-                    onClick={() => testeId(product.id)}
+                    onClick={() => getProduct(product.id)}
                      >
                         <img src={product.img} alt="Imagem provisória" />
                         <strong>{product.title}</strong>
@@ -95,14 +91,14 @@ export function Product() {
                     isOpen={isAddProductModalOpen}
                     onRequestClose={handleCloseProductModal}
                 >
-                    <img src={dataSaveTitle.img} alt="Imagem provisória" />
-                    <h2>{dataSaveTitle.title}</h2>
+                    <img src={dataSaveForModal.img} alt="Imagem provisória" />
+                    <h2>{dataSaveForModal.title}</h2>
                 </Modal>
             </Content>
             
             <Toys />
 
-        </Separator>
+        </Container>
     );
 }
 
