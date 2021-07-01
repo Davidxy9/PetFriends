@@ -14,9 +14,21 @@ interface ProductsData {
     off?: string;
 }
 
+interface dataPropsTitle {
+    title?: string;
+    img?: string;
+    id?: number;
+    off?: string;
+    amount?: number;
+    type?: string;
+}
+
 export function Product() {
     const [isAddProductModalOpen, setIsAddProductModalOpen] = useState(false);
     const [listProducts, setListProducts] = useState<ProductsData[]>([]);
+    const [dataSaveTitle, setDataSaveTitle] = useState({} as dataPropsTitle);
+    const [dataSaveImg, setDataSaveImg] = useState();
+
 
     useEffect(() => {
         api.get('products')
@@ -32,6 +44,20 @@ export function Product() {
     }
 
   
+    function testeId(id: number) {
+        const finalmenteID = listProducts.find(product => product.id === id)
+        const vai = {
+            title: finalmenteID?.title,
+            img: finalmenteID?.img,
+            amount: finalmenteID?.amount,
+            off: finalmenteID?.off,
+            type: finalmenteID?.type,
+            id: finalmenteID?.id
+
+        }
+
+        setDataSaveTitle(vai)
+    }
 
 
     return (
@@ -49,7 +75,7 @@ export function Product() {
                 {listProducts.map(product => (
                     <button
                     key={product.id}
-                    onClick={handleOpenProductModal}
+                    onClick={() => testeId(product.id)}
                      >
                         <img src={product.img} alt="Imagem provisória" />
                         <strong>{product.title}</strong>
@@ -58,6 +84,7 @@ export function Product() {
                             currency: 'BRL'
                         }).format(product.amount)}
                             
+                            <button onClick={handleOpenProductModal}>MIAU</button>
                         </p>
                     </button>
                 ))}
@@ -68,8 +95,8 @@ export function Product() {
                     isOpen={isAddProductModalOpen}
                     onRequestClose={handleCloseProductModal}
                 >
-                    <img src={imgTest2} alt="Imagem provisória" />
-                    <h2>Shampoo</h2>
+                    <img src={dataSaveTitle.img} alt="Imagem provisória" />
+                    <h2>{dataSaveTitle.title}</h2>
                 </Modal>
             </Content>
             
