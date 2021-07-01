@@ -29,9 +29,34 @@ createServer({
           id: 3,
           title: 'Cama Londres Azul - Chicxs',
           img: 'https://images-americanas.b2w.io/produtos/01/00/img/2070443/4/2070443430_1GG.jpg',
+          off: 'De R̶̶̶$̶̶̶3̶0̶0̶,̶̶̶3̶0̶',
           amount: 266.31,
           type: 'suggestion'
           
+        },
+
+        {
+          id: 4,
+          title: 'Cama Londres Vermelha - Chics',
+          img: 'https://images-americanas.b2w.io/produtos/01/00/img/1511316/8/1511316875_1GG.jpg',
+          amount: 300.39,
+          type: 'suggestion'
+        },
+
+        {
+          id: 5,
+          title: 'Cama Londres Vermelha - Chics',
+          img: 'https://images-americanas.b2w.io/produtos/01/00/img/1511316/8/1511316875_1GG.jpg',
+          amount: 300.39,
+          type: 'suggestion'
+        },
+
+        {
+          id: 6,
+          title: 'Cama Londres Vermelha - Chics',
+          img: 'https://images-americanas.b2w.io/produtos/01/00/img/1511316/8/1511316875_1GG.jpg',
+          amount: 300.39,
+          type: 'suggestion'
         }
       ]
     });

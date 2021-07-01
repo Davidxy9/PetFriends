@@ -66,13 +66,13 @@ export function Toys() {
              >
                 <img src={product.img} alt="Imagem" />
                 <strong>{product.title}</strong>
-                <p>{product?.off}</p>
+                <span>{product?.off}</span>
                 <p>{new Intl.NumberFormat('pt-br', {
                     style: 'currency',
                     currency: 'BRL'
                 }).format(product.amount)}
                     
-                    <button onClick={handleOpenProductModal}>MIAU</button>
+                    <button onClick={handleOpenProductModal}>Comprar</button>
                 </p>
             </button>
         ))}

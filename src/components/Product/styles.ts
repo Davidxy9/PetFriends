@@ -21,42 +21,10 @@ export const Container = styled.div`
     width: 100%;
 `;
 
-export const Content = styled.div`
-
-    /* display: flex;
-    flex-wrap: wrap;
-    max-width: 2000px;
-    margin: 50px 0;
-    border-radius: 10px;
-
-        button {
-            flex: 1 1 100px;
-             padding-top: 10px;
-             padding-left: 10px;
-             padding-right: 10px;
-             max-width: 170px;
-             background: #FFFF;
-        } */
-        display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  grid-column-gap: 10px;
-  grid-row-gap: 1em;
-
-  img {
-      width: 30%;
-      height: 30%;
-
-  }
-`;
-
 export const Separator = styled.div`
     /* width: 80%; */
   /* float: left; */
-  width: 20%;
+  width: 50%;
   height: 40px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -78,3 +46,40 @@ export const Separator = styled.div`
     /* margin: 0; */
   }
 `; 
+
+export const Content = styled.div`
+    display: flex;
+    margin-top: 80px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+
+
+    button {
+        margin: 4rem auto;
+        flex: 1 1 200px;
+    }
+
+    strong {
+        margin-bottom: 1rem;
+        
+    }
+
+   
+
+    span {
+        display: block;
+        margin-bottom: 1rem;
+
+    }
+
+    img{
+        max-width: 100%;
+        max-height: 100%;
+        margin-bottom: 1rem;
+
+        display: block;
+
+    }
+  
+`;
+

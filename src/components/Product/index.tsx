@@ -63,7 +63,7 @@ export function Product() {
     return (
         <Container>
       <Separator>
-        <BsSearch />
+        <BsSearch  style={{background: 'white'}}/>
         <input placeholder='O que você procura?' />
       </Separator>
 
@@ -75,12 +75,13 @@ export function Product() {
                      >
                         <img src={product.img} alt="Imagem provisória" />
                         <strong>{product.title}</strong>
+                        <span>{product?.off}</span>
                         <p>{new Intl.NumberFormat('pt-br', {
                             style: 'currency',
                             currency: 'BRL'
                         }).format(product.amount)}
                             
-                            <button onClick={handleOpenProductModal}>MIAU</button>
+                            <button onClick={handleOpenProductModal}>Comprar</button>
                         </p>
                     </button>
                 ))}
