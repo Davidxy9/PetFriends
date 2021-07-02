@@ -15,7 +15,7 @@ createServer({
           title: 'Shampoo Sanol Dog - Pelos claros 500ML',
           img: 'https://a-static.mlcdn.com.br/618x463/shampoo-para-cachorro-sanol-pelos-claros-500ml/agropesc/454/369f32cb669333f3dc4a4f868d40a6cc.jpg',
           amount: 60.90,
-          type: 'suggestion'
+          description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
         },
         {
           id: 2,

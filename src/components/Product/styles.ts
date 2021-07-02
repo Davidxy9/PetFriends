@@ -83,3 +83,9 @@ export const Content = styled.div`
   
 `;
 
+//ESTILIZAÇÃO MODAL
+
+export const ContainerModal = styled.div`
+    
+`;
+

@@ -2,11 +2,17 @@ import { Container } from "./styles";
 import rectanguleImg from '../../assets/rectangule.png'
 
 export function Category() {
+
+    function handleTeste(){
+        window.scroll(0,600)
+
+    }
+
     return (
         <Container>
             <img src={rectanguleImg} alt="retangulo horizontal" />
             
-            <button>
+            <button onClick={handleTeste}>
                 Sugestão do vendedor
             </button>
 
