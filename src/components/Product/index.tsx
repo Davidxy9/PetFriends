@@ -1,12 +1,13 @@
 import { Container, ContainerModal, Content, Separator } from "./styles"
 import Modal from 'react-modal';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { api } from "../../services/api";
 import { BsSearch } from 'react-icons/bs';
 import { FiPlusCircle,FiMinusCircle  } from 'react-icons/fi';
 
 
 import { Toys } from "./Toys";
+import { ProductContext } from "../../contexts/ProductContext";
 
 interface ProductsData {
     id: number;
@@ -37,9 +38,10 @@ export function Product() {
     const [productSearch, setProductSearch] = useState('');
     //transições envolvendo carrinho
     const [productValue, setProductValue] = useState(0);
-    const [productCart, setProductCart] = useState(0);
+    //const [productCart, setProductCart] = useState(0);
     const [productQuantity, setProductQuantity] = useState(0);
-
+    //contexto
+    const {productCart, setProductCart} = useContext(ProductContext);
     useEffect(() => {
         api.get('products')
             .then(response => setListProducts(response.data))
