@@ -15,7 +15,8 @@ import {
 
 
 export function Summary() {
-  const { productCart } = useContext(ProductContext);
+  const { productCart, productValue } = useContext(ProductContext);
+
 
   return (
     <Container>
@@ -50,7 +51,12 @@ export function Summary() {
         {/* <img src={carImg} alt='Carrinho de compras' /> */}
         <FaShoppingCart />
         <span>{productCart} Produtos no carrinho</span>
-        <p>R$ 349,80</p>
+        <p>
+        {new Intl.NumberFormat('pt-br', {
+                            style: 'currency',
+                            currency: 'BRL'
+                        }).format(productValue * productCart)}
+          </p>
       </ContainerCarrinho>
       {/*  */}
     </Container>

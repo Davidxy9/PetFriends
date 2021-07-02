@@ -37,11 +37,12 @@ export function Product() {
     const [dataSaveForModal, setDataSaveForModal] = useState({} as IdataSaveForModal);
     const [productSearch, setProductSearch] = useState('');
     //transições envolvendo carrinho
-    const [productValue, setProductValue] = useState(0);
+    //const [productValue, setProductValue] = useState(0);
     //const [productCart, setProductCart] = useState(0);
     const [productQuantity, setProductQuantity] = useState(0);
     //contexto
-    const {productCart, setProductCart} = useContext(ProductContext);
+    const {productCart, setProductCart, setProductValue} = useContext(ProductContext);
+    //const [finalProductValue, setFinalProductValue] = useState(0);
     useEffect(() => {
         api.get('products')
             .then(response => setListProducts(response.data))
@@ -79,11 +80,14 @@ export function Product() {
     }
 
     function handleAddProduct() {
-        // const getAmountProduct = dataSaveForModal.amount
+        const getAmountProduct = dataSaveForModal.amount
         
         
-        // setProductValue(Number(getAmountProduct))
+        setProductValue(Number(getAmountProduct))
+
         setProductCart(productQuantity + productCart);
+
+
     }
 
     function handleMoreQuantityProduct() {
