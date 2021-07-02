@@ -54,9 +54,10 @@ export function Product() {
     }
 
     function handleCloseProductModal() {
+        setProductQuantity(0);
+
         setIsAddProductModalOpen(false);
 
-        setProductQuantity(0)
 
     }
 
@@ -78,46 +79,24 @@ export function Product() {
     }
 
     function handleAddProduct() {
-        const miau = dataSaveForModal.amount
+        // const getAmountProduct = dataSaveForModal.amount
         
         
-        setProductValue(Number(miau))
-
-
-
+        // setProductValue(Number(getAmountProduct))
+        setProductCart(productQuantity + productCart);
     }
 
     function handleMoreQuantityProduct() {
-        let outroMiau = productQuantity;
-
-        outroMiau++;
-        setProductQuantity(outroMiau)
-
-        addInProductQuantity()
+        setProductQuantity(productQuantity+1)
     }
-
-    function addInProductQuantity(){
-        let resolveObug = productQuantity;
-        
-        resolveObug++;
-        setProductCart(resolveObug);
-
-    }
-    
-
 
     function handleLessQuantityProduct() {
-        let outroMiau2 = productQuantity;
+        if(productQuantity <= 0) return;
+        setProductQuantity(productQuantity-1)
 
-        outroMiau2--;
-        setProductQuantity(outroMiau2)
-        
     }
 
-    console.log(productValue);
     console.log(productQuantity);
-    console.log(productCart);
-
 
     return (
         <Container>

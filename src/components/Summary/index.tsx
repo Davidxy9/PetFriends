@@ -1,6 +1,8 @@
 import storeImg2 from '../../assets/storeImg2.png';
 
 import { FaMotorcycle, FaShoppingCart, FaRegClock } from 'react-icons/fa';
+import { useContext } from 'react';
+import { ProductContext } from '../../contexts/ProductContext';
 
 import {
   Container,
@@ -11,7 +13,10 @@ import {
   LinhaMeio,
 } from './styles';
 
+
 export function Summary() {
+  const { productCart } = useContext(ProductContext);
+
   return (
     <Container>
       {/*  */}
@@ -44,7 +49,7 @@ export function Summary() {
       <ContainerCarrinho>
         {/* <img src={carImg} alt='Carrinho de compras' /> */}
         <FaShoppingCart />
-        <span>5 Produtos no carrinho</span>
+        <span>{productCart} Produtos no carrinho</span>
         <p>R$ 349,80</p>
       </ContainerCarrinho>
       {/*  */}
