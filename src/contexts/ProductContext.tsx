@@ -1,10 +1,14 @@
-import { createContext, useState, ReactNode } from "react";
+import { createContext, useState, ReactNode} from "react";
 
 interface ProductProviderProps {
     children: ReactNode;
 }
+interface ConxtetData {
+    productCart: number;
+    setProductCart: React.Dispatch<React.SetStateAction<number>>;
+}
 
-export const ProductContext = createContext(0);
+export const ProductContext = createContext({} as ConxtetData);
 
 export function ProductProvider({children}: ProductProviderProps) {
     const [productCart, setProductCart] = useState(0);
@@ -12,7 +16,7 @@ export function ProductProvider({children}: ProductProviderProps) {
     
 
     return(
-        <ProductContext.Provider value={Number(productCart)}>
+        <ProductContext.Provider value={{productCart, setProductCart}}>
             {children}
         </ProductContext.Provider>
     );
