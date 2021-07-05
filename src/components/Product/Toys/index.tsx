@@ -4,6 +4,8 @@ import { api } from "../../../services/api";
 import { Container, ContainerModal, Content } from './styles';
 import { ProductContext } from '../../../contexts/ProductContext';
 import { FiMinusCircle, FiPlusCircle } from 'react-icons/fi';
+import { CgClose } from 'react-icons/cg'
+
 
 interface ToysData {
     id: number
@@ -31,18 +33,18 @@ export function Toys() {
     //transições envolvendo carrinho
     const [productQuantity, setProductQuantity] = useState(0);
     //contexto
-    const {productCart, setProductCart, setProductValue} = useContext(ProductContext);
+    const { productCart, setProductCart, setProductValue } = useContext(ProductContext);
 
 
     useEffect(() => {
         api.get('toys')
             .then(response => setListToys(response.data))
-    },[]);
+    }, []);
 
     function handleOpenProductModal() {
         setIsAddProductModalOpen(true);
     }
-    
+
     function handleCloseProductModal() {
         setIsAddProductModalOpen(false);
     }
@@ -64,8 +66,8 @@ export function Toys() {
 
     function handleAddProduct() {
         const getAmountProduct = dataSaveForModal.amount
-        
-        
+
+
         setProductValue(Number(getAmountProduct))
 
         setProductCart(productQuantity + productCart);
@@ -74,16 +76,16 @@ export function Toys() {
     }
 
     function handleMoreQuantityProduct() {
-        setProductQuantity(productQuantity+1)
+        setProductQuantity(productQuantity + 1)
     }
 
     function handleLessQuantityProduct() {
-        if(productQuantity <= 0) return;
-        setProductQuantity(productQuantity-1)
+        if (productQuantity <= 0) return;
+        setProductQuantity(productQuantity - 1)
 
     }
 
-    return(
+    return (
         <Container>
 
             <Content>
@@ -110,19 +112,25 @@ export function Toys() {
                 <Modal
                     isOpen={isAddProductModalOpen}
                     onRequestClose={handleCloseProductModal}
+                    overlayClassName="react-modal-overlay"
+                    className="react-modal-content"
                 >
                     <ContainerModal>
-                        <img src={dataSaveForModal.img} style={{width:'400px', height: '400px'}}alt="Imagem provisória" />
+                        <button className="button-close" type="button" onClick={handleCloseProductModal}>
+                            <CgClose size={30} />
+
+                        </button>
+                        <img src={dataSaveForModal.img} style={{ width: '400px', height: '400px' }} alt="Imagem provisória" />
                         <div>
                             <h1>{dataSaveForModal.title}</h1>
                             <p>{dataSaveForModal.description}</p>
-                            <div>
-                                <button onClick={handleLessQuantityProduct}><FiMinusCircle/></button>
+                            <div className="div-plus-and-less">
+                                <button onClick={handleLessQuantityProduct}><FiMinusCircle /></button>
                                 <span>{productQuantity}</span>
-                                <button onClick={handleMoreQuantityProduct}><FiPlusCircle/></button>
+                                <button onClick={handleMoreQuantityProduct}><FiPlusCircle /></button>
                             </div>
                         </div>
-                        <button onClick={handleAddProduct}>Adicionar</button>
+                        <button className="button-add-product" onClick={handleAddProduct}>Adicionar</button>
                     </ContainerModal>
                 </Modal>
             </Content>

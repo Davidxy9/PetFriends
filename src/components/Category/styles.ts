@@ -18,5 +18,12 @@ export const Container = styled.div`
         background: none;
         align-items: center;
         justify-content: center;
+
+        transition: filter 0.3s;
+
+        &:hover {
+            color: var(--background);
+            text-decoration: underline;
+        }
     }
 `;
