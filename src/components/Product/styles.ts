@@ -56,11 +56,24 @@ export const Content = styled.div`
     margin-top: 80px;
     flex-wrap: wrap;
     margin: 0 auto;
+   // background: #000;
+
+    h1 {
+        margin-top: 5rem;
+        margin-bottom: 0;
+        margin-right: 0;
+        margin-left: 5rem;
+        padding-right: 6rem;
+        padding-bottom: 0;
+        height: 3rem;
+        width: 100%;
+
+    }
 
 
     button {
-        margin: 4rem auto;
-        flex: 1 1 200px;
+        margin: 1rem auto auto 5rem;
+        flex: 1 1 144px;
     }
 
     strong {

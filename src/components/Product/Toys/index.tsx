@@ -5,6 +5,7 @@ import { Container, ContainerModal, Content } from './styles';
 import { ProductContext } from '../../../contexts/ProductContext';
 import { FiMinusCircle, FiPlusCircle } from 'react-icons/fi';
 import { CgClose } from 'react-icons/cg'
+import { prependListener } from 'process';
 
 
 interface ToysData {
@@ -26,7 +27,14 @@ interface IdataSaveForModal {
     description?: string;
 }
 
-export function Toys() {
+interface Props {
+    title: string;
+    data: ToysData[];
+    // add: (id: number) => void;
+    add: () => void;
+}
+
+export function Toys({title, data, add}: Props) {
     const [listToys, setListToys] = useState<ToysData[]>([]);
     const [isAddProductModalOpen, setIsAddProductModalOpen] = useState(false);
     const [dataSaveForModal, setDataSaveForModal] = useState({} as IdataSaveForModal);
@@ -64,16 +72,16 @@ export function Toys() {
         setDataSaveForModal(objectsForModal)
     }
 
-    function handleAddProduct() {
-        const getAmountProduct = dataSaveForModal.amount
+    // function handleAddProduct() {
+    //     const getAmountProduct = dataSaveForModal.amount
 
 
-        setProductValue(Number(getAmountProduct))
+    //     setProductValue(Number(getAmountProduct))
 
-        setProductCart(productQuantity + productCart);
+    //     setProductCart(productQuantity + productCart);
 
 
-    }
+    // }
 
     function handleMoreQuantityProduct() {
         setProductQuantity(productQuantity + 1)
@@ -89,7 +97,9 @@ export function Toys() {
         <Container>
 
             <Content>
-                {listToys.map(product => (
+            <h1>{title}</h1>
+
+                {data.map(product => (
                     <button
                         key={product.id}
                         onClick={() => getProduct(product.id)}
@@ -130,7 +140,7 @@ export function Toys() {
                                 <button onClick={handleMoreQuantityProduct}><FiPlusCircle /></button>
                             </div>
                         </div>
-                        <button className="button-add-product" onClick={handleAddProduct}>Adicionar</button>
+                        <button className="button-add-product" onClick={add}>Adicionar</button>
                     </ContainerModal>
                 </Modal>
             </Content>
