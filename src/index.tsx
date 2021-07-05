@@ -120,8 +120,8 @@ createServer({
 
       ]
     });
-    
-    this.get('/collars', () => {
+
+    this.get('/beds-and-houses', () => {
       return [
         {
           id: 13,
@@ -176,7 +176,121 @@ createServer({
           description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
         }
       ]
-    })
+    });
+    
+    this.get('/collars', () => {
+      return [
+        {
+          id: 19,
+          title: 'Mordedor de pelúcida Jacaré - Multi Squeaker',
+          img: 'https://www.petlove.com.br/images/products/230776/product/Brinquedo_Mordedor_Pel%C3%BAcia_Jacar%C3%A9_Multi_Squeaker_2555550.jpg?1602099153',
+          amount: 72.20,
+          off: 'De R̶$̶8̶0̶,̶2̶2̶',
+          description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
+        },
+
+        {
+          id: 20,
+          title: 'Mordedor de pelúcida Jacaré - Multi Squeaker',
+          img: 'https://www.petlove.com.br/images/products/230776/product/Brinquedo_Mordedor_Pel%C3%BAcia_Jacar%C3%A9_Multi_Squeaker_2555550.jpg?1602099153',
+          amount: 72.20,
+          description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
+        },
+
+        {
+          id: 21,
+          title: 'Mordedor de pelúcida Jacaré - Multi Squeaker',
+          img: 'https://www.petlove.com.br/images/products/230776/product/Brinquedo_Mordedor_Pel%C3%BAcia_Jacar%C3%A9_Multi_Squeaker_2555550.jpg?1602099153',
+          amount: 72.20,
+          off: 'De R̶$̶8̶0̶,̶2̶2̶',
+          description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
+        },
+
+        {
+          id: 22,
+          title: 'Mordedor de pelúcida Jacaré - Multi Squeaker',
+          img: 'https://www.petlove.com.br/images/products/230776/product/Brinquedo_Mordedor_Pel%C3%BAcia_Jacar%C3%A9_Multi_Squeaker_2555550.jpg?1602099153',
+          amount: 72.20,
+          off: 'De R̶$̶8̶0̶,̶2̶2̶',
+          description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
+        },
+
+        {
+          id: 23,
+          title: 'Mordedor de pelúcida Jacaré - Multi Squeaker',
+          img: 'https://www.petlove.com.br/images/products/230776/product/Brinquedo_Mordedor_Pel%C3%BAcia_Jacar%C3%A9_Multi_Squeaker_2555550.jpg?1602099153',
+          amount: 72.20,
+          off: 'De R̶$̶8̶0̶,̶2̶2̶',
+          description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
+        },
+
+        {
+          id: 24,
+          title: 'Mordedor de pelúcida Jacaré - Multi Squeaker',
+          img: 'https://www.petlove.com.br/images/products/230776/product/Brinquedo_Mordedor_Pel%C3%BAcia_Jacar%C3%A9_Multi_Squeaker_2555550.jpg?1602099153',
+          amount: 72.20,
+          off: 'De R̶$̶8̶0̶,̶2̶2̶',
+          description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
+        }
+      ]
+    });
+
+    this.get('/bones-and-snacks', () => {
+      return [
+        {
+          id: 25,
+          title: 'Mordedor de pelúcida Jacaré - Multi Squeaker',
+          img: 'https://www.petlove.com.br/images/products/230776/product/Brinquedo_Mordedor_Pel%C3%BAcia_Jacar%C3%A9_Multi_Squeaker_2555550.jpg?1602099153',
+          amount: 72.20,
+          off: 'De R̶$̶8̶0̶,̶2̶2̶',
+          description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
+        },
+
+        {
+          id: 26,
+          title: 'Mordedor de pelúcida Jacaré - Multi Squeaker',
+          img: 'https://www.petlove.com.br/images/products/230776/product/Brinquedo_Mordedor_Pel%C3%BAcia_Jacar%C3%A9_Multi_Squeaker_2555550.jpg?1602099153',
+          amount: 72.20,
+          description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
+        },
+
+        {
+          id: 27,
+          title: 'Mordedor de pelúcida Jacaré - Multi Squeaker',
+          img: 'https://www.petlove.com.br/images/products/230776/product/Brinquedo_Mordedor_Pel%C3%BAcia_Jacar%C3%A9_Multi_Squeaker_2555550.jpg?1602099153',
+          amount: 72.20,
+          off: 'De R̶$̶8̶0̶,̶2̶2̶',
+          description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
+        },
+
+        {
+          id: 28,
+          title: 'Mordedor de pelúcida Jacaré - Multi Squeaker',
+          img: 'https://www.petlove.com.br/images/products/230776/product/Brinquedo_Mordedor_Pel%C3%BAcia_Jacar%C3%A9_Multi_Squeaker_2555550.jpg?1602099153',
+          amount: 72.20,
+          off: 'De R̶$̶8̶0̶,̶2̶2̶',
+          description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
+        },
+
+        {
+          id: 29,
+          title: 'Mordedor de pelúcida Jacaré - Multi Squeaker',
+          img: 'https://www.petlove.com.br/images/products/230776/product/Brinquedo_Mordedor_Pel%C3%BAcia_Jacar%C3%A9_Multi_Squeaker_2555550.jpg?1602099153',
+          amount: 72.20,
+          off: 'De R̶$̶8̶0̶,̶2̶2̶',
+          description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
+        },
+
+        {
+          id: 30,
+          title: 'Mordedor de pelúcida Jacaré - Multi Squeaker',
+          img: 'https://www.petlove.com.br/images/products/230776/product/Brinquedo_Mordedor_Pel%C3%BAcia_Jacar%C3%A9_Multi_Squeaker_2555550.jpg?1602099153',
+          amount: 72.20,
+          off: 'De R̶$̶8̶0̶,̶2̶2̶',
+          description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
+        }
+      ]
+    });
   }
 })
 

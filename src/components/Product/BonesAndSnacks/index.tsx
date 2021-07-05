@@ -1,27 +1,18 @@
-import { Container, ContainerModal, Content, Separator } from "./styles"
+import { useContext, useEffect, useState } from "react";
 import Modal from 'react-modal';
-import { useEffect, useState, useContext } from "react";
-import { api } from "../../services/api";
-import { BsSearch } from 'react-icons/bs';
-import { FiPlusCircle,FiMinusCircle  } from 'react-icons/fi';
+import { FiMinusCircle, FiPlusCircle } from "react-icons/fi";
+import { ProductContext } from "../../../contexts/ProductContext";
+import { api } from "../../../services/api";
+import { Container, ContainerModal, Content } from "./styles";
 
-
-import { Toys } from "./Toys";
-import { Collars } from "./Collars";
-
-import { ProductContext } from "../../contexts/ProductContext";
-import { BedsAndHouses } from "./BedsAndHouses";
-import { BonesAndSnacks } from "./BonesAndSnacks";
-
-interface ProductsData {
-    id: number;
+interface BonesAndSnacksData {
+    id: number
     amount: number;
     img: string;
     title: string;
     type: string;
     off?: string;
     description: string;
-
 }
 
 interface IdataSaveForModal {
@@ -33,23 +24,19 @@ interface IdataSaveForModal {
     description?: string;
 }
 
-
-
-export function Product() {
+export function BonesAndSnacks() {
+    const [listBonesAndSnacks, setListBonesAndSnacks] = useState<BonesAndSnacksData[]>([]);
     const [isAddProductModalOpen, setIsAddProductModalOpen] = useState(false);
-    const [listProducts, setListProducts] = useState<ProductsData[]>([]);
     const [dataSaveForModal, setDataSaveForModal] = useState({} as IdataSaveForModal);
-    const [productSearch, setProductSearch] = useState('');
     //transições envolvendo carrinho
     const [productQuantity, setProductQuantity] = useState(0);
     //contexto
     const {productCart, setProductCart, setProductValue} = useContext(ProductContext);
-    useEffect(() => {
-        api.get('products')
-            .then(response => setListProducts(response.data))
-    }, []);
 
-    
+    useEffect(() => {
+        api.get('/bones-and-snacks')
+            .then(response => setListBonesAndSnacks(response.data))
+    },[])
 
     function handleOpenProductModal() {
         setIsAddProductModalOpen(true);
@@ -65,7 +52,7 @@ export function Product() {
 
 
     function getProduct(id: number) {
-        const searchProductSelected = listProducts.find(product => product.id === id)
+        const searchProductSelected = listBonesAndSnacks.find(product => product.id === id)
         const objectsForModal = {
             title: searchProductSelected?.title,
             img: searchProductSelected?.img,
@@ -86,7 +73,7 @@ export function Product() {
         
         setProductValue(Number(getAmountProduct))
 
-        setProductCart(productQuantity + productCart)
+        setProductCart(productQuantity + productCart);
 
 
     }
@@ -105,18 +92,9 @@ export function Product() {
 
     return (
         <Container>
-            <Separator>
-                <BsSearch style={{ background: 'white' }} />
-
-                <input
-                    placeholder='O que você procura?'
-                    value={productSearch}
-                    onChange={(event) => setProductSearch(event.target.value)}
-                />
-            </Separator>
 
             <Content>
-                {listProducts.map(product => (
+                {listBonesAndSnacks.map(product => (
                     <button
                         key={product.id}
                         onClick={() => getProduct(product.id)}
@@ -156,19 +134,7 @@ export function Product() {
                 </Modal>
             </Content>
 
-            <Toys />
-            <BedsAndHouses />
-            <Collars />
-            <BonesAndSnacks />
-            
 
         </Container>
     );
 }
-
-/*
-    function handleSearchProduct(){
-
-    }
-
-*/
