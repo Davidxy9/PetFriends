@@ -22,29 +22,33 @@ export const Container = styled.div`
 `;
 
 export const Separator = styled.div`
-    /* width: 80%; */
-  /* float: left; */
-  width: 50%;
-  height: 40px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: 'white';
+    width: 50%;
+    padding-top: 1rem;
+    padding-left: 5rem;
+    //background: red;
+    position: absolute;
 
-  input {
-    float: left;
-    width: 93%;
-    height: 100%;
-    border: none;
-    background: 'white';
-    outline: none !important;
-    box-shadow: none;
-  }
+    
+    svg{
+        padding: 0.2rem;
+        height: 1rem;
+    }
 
-  svg {
-    height: 40px;
-
-    /* margin: 0; */
-  }
+    svg{
+        position: absolute;
+        margin-left: 31.6rem;
+        margin-top: 0.7rem;
+    }
+    input{
+        float: left;
+        width: 93%;
+        padding: 10px;
+        border: none;
+        outline: none;
+        border: 1px solid #DDDDDD;
+        box-sizing: border-box;
+        border-radius: 5px 0 0 5px;
+    }
 `; 
 
 export const Content = styled.div`

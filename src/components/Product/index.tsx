@@ -111,13 +111,15 @@ export function Product() {
     return (
         <Container>
             <Separator>
-                <BsSearch style={{ background: 'white' }} />
-
+                <div>
+                <BsSearch style={{ background: 'white' }} size={40}/>
                 <input
                     placeholder='O que você procura?'
                     value={productSearch}
                     onChange={(event) => setProductSearch(event.target.value)}
+                    
                 />
+                </div>
             </Separator>
 
             <Content>
