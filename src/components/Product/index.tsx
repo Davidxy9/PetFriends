@@ -99,6 +99,10 @@ export function Product() {
         if(productQuantity <= 0) return;
         setProductQuantity(productQuantity-1)
 
+        if(productCart <= 0) return;
+        setProductCart(productCart - 1)
+
+
     }
 
     console.log(productQuantity);

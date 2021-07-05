@@ -28,7 +28,6 @@ export function Toys() {
     const [listToys, setListToys] = useState<ToysData[]>([]);
     const [isAddProductModalOpen, setIsAddProductModalOpen] = useState(false);
     const [dataSaveForModal, setDataSaveForModal] = useState({} as IdataSaveForModal);
-    const [productSearch, setProductSearch] = useState('');
     //transições envolvendo carrinho
     const [productQuantity, setProductQuantity] = useState(0);
     //contexto
