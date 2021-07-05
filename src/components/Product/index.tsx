@@ -4,6 +4,7 @@ import { useEffect, useState, useContext } from "react";
 import { api } from "../../services/api";
 import { BsSearch } from 'react-icons/bs';
 import { FiPlusCircle,FiMinusCircle  } from 'react-icons/fi';
+import { CgClose } from 'react-icons/cg'
 
 
 import { Toys } from "./Toys";
@@ -143,19 +144,25 @@ export function Product() {
                 <Modal
                     isOpen={isAddProductModalOpen}
                     onRequestClose={handleCloseProductModal}
+                    overlayClassName="react-modal-overlay"
+                    className="react-modal-content"
                 >
                     <ContainerModal>
+                        <button className="button-close" type="button" onClick={handleCloseProductModal}> 
+                            <CgClose size={30} />
+
+                        </button>
                         <img src={dataSaveForModal.img} style={{width:'400px', height: '400px'}}alt="Imagem provisória" />
                         <div>
                             <h1>{dataSaveForModal.title}</h1>
                             <p>{dataSaveForModal.description}</p>
-                            <div>
+                            <div className="div-plus-and-less">
                                 <button onClick={handleLessQuantityProduct}><FiMinusCircle/></button>
                                 <span>{productQuantity}</span>
                                 <button onClick={handleMoreQuantityProduct}><FiPlusCircle/></button>
                             </div>
                         </div>
-                        <button onClick={handleAddProduct}>Adicionar</button>
+                        <button className="button-add-product" onClick={handleAddProduct}>Adicionar</button>
                     </ContainerModal>
                 </Modal>
             </Content>
