@@ -28,14 +28,11 @@ export const Separator = styled.div`
     //background: red;
     position: absolute;
 
-    
-    svg{
-        padding: 0.2rem;
-        height: 1rem;
-    }
 
     svg{
         position: absolute;
+        padding: 0.2rem;
+        height: 1rem;
         margin-left: 31.6rem;
         margin-top: 0.7rem;
     }
@@ -53,16 +50,15 @@ export const Separator = styled.div`
 
 export const Content = styled.div`
     display: flex;
-    margin-top: 80px;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin: 0 4.6rem;
     //background: #000;
 
     h1 {
         margin-top: 5rem;
         margin-bottom: 0;
         margin-right: 0;
-        margin-left: 5rem;
+        margin-left: 0.4rem;
         padding-right: 6rem;
         padding-bottom: 0;
         height: 3rem;
@@ -72,8 +68,15 @@ export const Content = styled.div`
 
 
     button {
-        margin: 1rem auto auto 5rem;
-        flex: 1 1 144px;
+        flex: 1 1 200px;
+        margin: 8px;
+        max-width: 20%;
+        max-height: 20%;
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
     }
 
     strong {
