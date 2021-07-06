@@ -82,7 +82,8 @@ export function Cards({ title, data }: Props) {
     if (productCart <= 0) return;
     setProductCart(productCart - 1);
   }
-
+  
+  //<span>{product?.off}</span>
   return (
     <Container>
       <Content>
@@ -92,7 +93,9 @@ export function Cards({ title, data }: Props) {
           <button key={product.id} onClick={() => getProduct(product.id)}>
             <img src={product.img} alt='Imagem provisória' />
             <strong>{product.title}</strong>
-            <span>{product?.off}</span>
+            {product?.type === 'suggestion' &&
+              <span>{product?.off}</span>
+            }
             <p>
               {new Intl.NumberFormat('pt-br', {
                 style: 'currency',

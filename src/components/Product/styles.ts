@@ -72,34 +72,61 @@ export const Content = styled.div`
         margin: 8px;
         max-width: 20%;
         max-height: 20%;
+        //background: var(--titles);
+        //background: #000;
+        border: 1px solid #D9D9D9;
+        box-sizing: border-box;
+        border-radius: 5px;
+        cursor: auto;
 
         img {
             max-width: 100%;
             display: block;
+            max-width: 100%;
+            max-height: 100%;
+            height: 300px;
+            width: 300px;
         }
     }
 
     strong {
-        margin-bottom: 1rem;
+        margin: 1rem;
         
     }
 
-   
-
     span {
         display: block;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
 
     }
 
-    img{
-        max-width: 100%;
-        max-height: 100%;
-        margin-bottom: 1rem;
+    p {
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 27px;
+        color: #3F3F3F;
+        
+        button {
+            cursor: pointer;
+            background: var(--background);
+            border: 0;
+            border-radius: 0.25rem;
+            color: #FFF;
+            width: 100%;
+            //margin: auto 2rem;
+            margin-left: 1rem;
 
-        display: block;
+            margin-right: -3rem;
+            padding-right: 4.5rem;
+            padding-left: 0.5rem;
 
+            height: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
     }
+
+   
   
 `;
 

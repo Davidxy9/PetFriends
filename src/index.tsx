@@ -15,6 +15,8 @@ createServer({
           title: 'Shampoo Sanol Dog - Pelos claros 500ML',
           img: 'https://a-static.mlcdn.com.br/618x463/shampoo-para-cachorro-sanol-pelos-claros-500ml/agropesc/454/369f32cb669333f3dc4a4f868d40a6cc.jpg',
           amount: 60.90,
+          off: 'De R̶̶̶$̶̶̶3̶0̶0̶,̶̶̶3̶0̶',
+          type: 'suggestion',
           description: '-Shampoo para cachorros de pelos claros para banhos semanais, 500ML'
         },
         {
@@ -61,6 +63,7 @@ createServer({
           title: 'Ração Magnus Chips - Para Cães adultos, 15kg',
           img: 'https://www.petlove.com.br/images/products/225089/product/311733.jpg?1593521736',
           amount: 87.93,
+          off: 'De R̶$̶8̶0̶,̶2̶2̶',
           type: 'toy'
         },
 
