@@ -58,6 +58,8 @@ export function Cards({ title, data }: Props) {
       off: searchProductSelected?.off,
       type: searchProductSelected?.type,
       id: searchProductSelected?.id,
+      description: searchProductSelected?.description
+
     };
 
     setDataSaveForModal(objectsForModal);
@@ -93,9 +95,7 @@ export function Cards({ title, data }: Props) {
           <button key={product.id} onClick={() => getProduct(product.id)}>
             <img src={product.img} alt='Imagem provisória' />
             <strong>{product.title}</strong>
-            {product?.type === 'suggestion' &&
               <span>{product?.off}</span>
-            }
             <p>
               {new Intl.NumberFormat('pt-br', {
                 style: 'currency',
