@@ -72,7 +72,7 @@ export const Content = styled.div`
         margin: 8px;
         max-width: 20%;
         max-height: 20%;
-        //background: var(--titles);
+        background: var(--titles);
         //background: #000;
         border: 1px solid #D9D9D9;
         box-sizing: border-box;
@@ -84,8 +84,8 @@ export const Content = styled.div`
             display: block;
             max-width: 100%;
             max-height: 100%;
-            height: 300px;
-            width: 300px;
+            height: 18.75rem;
+            width: 18.75rem;
         }
     }
 
@@ -96,7 +96,9 @@ export const Content = styled.div`
 
     span {
         display: block;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
+        color: #DC143C;
+        font-weight: 600;
 
     }
 

@@ -53,8 +53,16 @@ export const ContainerCarrinho = styled.div`
     margin-right: 1rem;
   }
 
+  span {
+    font-weight: bold;
+    color: #3F3F3F;
+
+  }
+
   p {
     margin: 0 2rem 0 2rem;
+    color: var(--background);
+    font-weight: bold;
   }
 `;
 
@@ -86,9 +94,11 @@ export const Opt = styled.div`
     span {
       margin-right: 0.5rem;
       margin-left: 0.2rem;
+      font-weight: 500;
     }
     p {
       margin-right: 4rem;
+      color: #818181;
     }
   }
 `;
