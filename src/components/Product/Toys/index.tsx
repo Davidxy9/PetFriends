@@ -5,7 +5,6 @@ import { Container, ContainerModal, Content } from './styles';
 import { ProductContext } from '../../../contexts/ProductContext';
 import { FiMinusCircle, FiPlusCircle } from 'react-icons/fi';
 import { CgClose } from 'react-icons/cg'
-import { prependListener } from 'process';
 
 
 interface ToysData {
@@ -27,32 +26,25 @@ interface IdataSaveForModal {
     description?: string;
 }
 
-interface Props {
-    title: string;
-    data: ToysData[];
-    // add: (id: number) => void;
-    add: () => void;
-}
-
-export function Toys({title, data, add}: Props) {
+export function Toys() {
     const [listToys, setListToys] = useState<ToysData[]>([]);
     const [isAddProductModalOpen, setIsAddProductModalOpen] = useState(false);
     const [dataSaveForModal, setDataSaveForModal] = useState({} as IdataSaveForModal);
     //transições envolvendo carrinho
     const [productQuantity, setProductQuantity] = useState(0);
     //contexto
-    const { productCart, setProductCart, setProductValue } = useContext(ProductContext);
+    const {productCart, setProductCart, setProductValue} = useContext(ProductContext);
 
 
     useEffect(() => {
         api.get('toys')
             .then(response => setListToys(response.data))
-    }, []);
+    },[]);
 
     function handleOpenProductModal() {
         setIsAddProductModalOpen(true);
     }
-
+    
     function handleCloseProductModal() {
         setIsAddProductModalOpen(false);
     }
@@ -72,34 +64,32 @@ export function Toys({title, data, add}: Props) {
         setDataSaveForModal(objectsForModal)
     }
 
-    // function handleAddProduct() {
-    //     const getAmountProduct = dataSaveForModal.amount
+    function handleAddProduct() {
+        const getAmountProduct = dataSaveForModal.amount
+        
+        
+        setProductValue(Number(getAmountProduct))
+
+        setProductCart(productQuantity + productCart);
 
 
-    //     setProductValue(Number(getAmountProduct))
-
-    //     setProductCart(productQuantity + productCart);
-
-
-    // }
+    }
 
     function handleMoreQuantityProduct() {
-        setProductQuantity(productQuantity + 1)
+        setProductQuantity(productQuantity+1)
     }
 
     function handleLessQuantityProduct() {
-        if (productQuantity <= 0) return;
-        setProductQuantity(productQuantity - 1)
+        if(productQuantity <= 0) return;
+        setProductQuantity(productQuantity-1)
 
     }
 
-    return (
+    return(
         <Container>
 
             <Content>
-            <h1>{title}</h1>
-
-                {data.map(product => (
+                {listToys.map(product => (
                     <button
                         key={product.id}
                         onClick={() => getProduct(product.id)}
@@ -119,7 +109,7 @@ export function Toys({title, data, add}: Props) {
 
 
 
-                <Modal
+                 <Modal
                     isOpen={isAddProductModalOpen}
                     onRequestClose={handleCloseProductModal}
                     overlayClassName="react-modal-overlay"
@@ -140,7 +130,7 @@ export function Toys({title, data, add}: Props) {
                                 <button onClick={handleMoreQuantityProduct}><FiPlusCircle /></button>
                             </div>
                         </div>
-                        <button className="button-add-product" onClick={add}>Adicionar</button>
+                        <button className="button-add-product" onClick={handleAddProduct}>Adicionar</button>
                     </ContainerModal>
                 </Modal>
             </Content>

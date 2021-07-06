@@ -39,8 +39,6 @@ interface IdataSaveForModal {
 export function Product() {
     const [isAddProductModalOpen, setIsAddProductModalOpen] = useState(false);
     const [listProducts, setListProducts] = useState<ProductsData[]>([]);
-    const [listToys, setListToys] = useState<ProductsData[]>([]);
-
     const [dataSaveForModal, setDataSaveForModal] = useState({} as IdataSaveForModal);
     const [productSearch, setProductSearch] = useState('');
     //transições envolvendo carrinho
@@ -50,9 +48,6 @@ export function Product() {
     useEffect(() => {
         api.get('products')
             .then(response => setListProducts(response.data))
-
-            api.get('toys')
-            .then(response => setListToys(response.data))
     }, []);
 
     const filter = listProducts.filter((product) => product.title.toLowerCase().includes(productSearch) )
@@ -127,20 +122,7 @@ export function Product() {
                 </div>
             </Separator>
 
-            <Toys 
-            title='Sugestão do vendedor'
-            data={filter}
-            add={handleAddProduct}
-            />
-
-<Toys 
-            title='Toys'
-            data={listToys}
-            add={handleAddProduct}
-
-            />
-
-            {/* <Content>
+            <Content>
                 <h1>Sugestão do vendedor</h1>
                 {filter.map(product => (
                     <button
@@ -191,7 +173,7 @@ export function Product() {
             <Toys />
             <BedsAndHouses />
             <Collars />
-            <BonesAndSnacks /> */}
+            <BonesAndSnacks />
             
 
         </Container>

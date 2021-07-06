@@ -56,7 +56,7 @@ export const Content = styled.div`
     margin-top: 80px;
     flex-wrap: wrap;
     margin: 0 auto;
-   // background: #000;
+    //background: #000;
 
     h1 {
         margin-top: 5rem;
