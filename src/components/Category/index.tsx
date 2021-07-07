@@ -12,21 +12,21 @@ export function Category() {
 
     function handleDirectionToys(){
         window.scroll({
-            top: 900,
+            top: 800,
             behavior: "smooth"
         })
     }
 
     function handleDirectionBedsAndHouses(){
         window.scroll({
-            top: 1400,
+            top: 1300,
             behavior: "smooth"
         })
     }
 
     function handleDirectionCollars(){
         window.scroll({
-            top: 2000,
+            top: 1900,
             behavior: "smooth"
         })
     }
