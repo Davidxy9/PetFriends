@@ -90,7 +90,7 @@ export const Content = styled.div`
     button {
         flex: 1 1 200px;
         margin: 8px;
-        max-width: 30%;
+        max-width: 20%;
         max-height: 20%;
         background: var(--titles);
         //background: #000;
@@ -98,6 +98,9 @@ export const Content = styled.div`
         box-sizing: border-box;
         border-radius: 5px;
         cursor: auto;
+        @media(max-width: 1300px){
+            max-width: 30%;
+        }
         @media(max-width: 600px){
             max-width: 50%;
         }
