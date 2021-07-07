@@ -210,10 +210,14 @@ export const ContainerModal = styled.div`
 
     p {
         font-weight: 400;
+
+        @media(max-width: 520px){
+            width: 50%;
+        }
     }
 
     .div-plus-and-less {
-        margin: 1rem 14.4rem;
+        margin: 1rem 14.9rem;
         padding: 0.2rem 2rem;
         //width: 3.1rem;
         width: 3.3rem;
@@ -241,6 +245,22 @@ export const ContainerModal = styled.div`
                 padding: auto 2rem;
                 font-weight: 600;
             }
+        
+        @media(max-width: 1090px){
+            margin: 0.2rem;
+        }
+        @media(max-width: 900px){
+            margin: 0.1rem;
+        }
+
+        @media(max-width: 600px){
+            margin: 0.1rem;
+            
+        }
+
+        @media(max-width: 520px){
+            width: 30%;
+        }
     }
 
     .button-add-product {
@@ -253,6 +273,18 @@ export const ContainerModal = styled.div`
         height: 2rem;
         font-size: 1rem;
         font-weight: 600;
+
+        @media(max-width: 900px){
+            margin: 3rem;
+        }
+
+        @media(max-width: 898px){
+            margin: 1rem;
+        }
+
+        @media(max-width: 520px){
+            width: 80%;
+        }
     }
 
 

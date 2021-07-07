@@ -68,9 +68,27 @@ export const GlobalStyle = createGlobalStyle`
       width: 100%;
       max-width: 576px;
       background: var(--titles);
-      padding: 2rem;
+      padding: 1rem;
       position: relative;
       border-radius: 0.25rem;
+
+      @media(max-width: 900px){
+          height: 98%;
+          max-height: 644px;
+          padding: 0.5rem;
+      }
+
+      @media (max-width: 898px){
+          max-height: 620px;
+      }
+
+      @media (max-width: 600px){
+          max-width: 500px;
+      }
+
+      @media (max-width: 430px){
+          max-height: 640px;
+      }
     }
 
     .react-modal-close {
