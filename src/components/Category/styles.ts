@@ -17,6 +17,14 @@ export const Container = styled.div`
     img {
         width: 100%;
         margin: 1rem auto;
+
+        @media(max-width: 765px){
+            width: 105%;
+        }
+
+        @media(max-width: 693px){
+            width: 113%;
+        }
     }
 
     button {
@@ -34,6 +42,14 @@ export const Container = styled.div`
         &:hover {
             color: var(--background);
             text-decoration: underline;
+        }
+
+        @media(max-width: 765px){
+            width: 8%;
+        }
+
+        @media(max-width: 630px){
+            padding: 1rem 1rem;
         }
     }
 

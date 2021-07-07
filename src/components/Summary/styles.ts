@@ -44,7 +44,7 @@ export const ContainerStart = styled.div`
 
 export const ContainerCart = styled.div`
   @media (max-width: 600px) {
-    //display: none;
+    display: none;
   }
 
   align-self: center;
@@ -81,11 +81,7 @@ export const LinhaMid = styled.div`
 `;
 
 export const Opt = styled.div`
-  /* display: grid; */
-  /* grid-template-columns: 1fr 2fr; */
-
   display: flex;
-  /* align-self: flex-end; */
 
   @media (min-width: 600px) {
     display: flex;
@@ -95,10 +91,13 @@ export const Opt = styled.div`
       margin-right: 0.5rem;
       margin-left: 0.2rem;
       font-weight: 500;
+
     }
     p {
       margin-right: 4rem;
       color: #818181;
     }
   }
+
+  
 `;

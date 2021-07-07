@@ -31,6 +31,13 @@ export const Separator = styled.div`
         height: 1rem;
         margin-left: 31.6rem;
         margin-top: 0.7rem;
+
+        @media(max-width: 600px){
+            display: none;
+        }
+        @media(max-width: 1300px){
+            display: none;
+        }
     }
     input{
         float: left;
@@ -41,6 +48,17 @@ export const Separator = styled.div`
         border: 1px solid #DDDDDD;
         box-sizing: border-box;
         border-radius: 5px 0 0 5px;
+
+        @media(max-width: 765px){
+            width: 100%;
+        }
+
+        @media(max-width: 600px){
+              width: 200%;
+
+        }
+    
+    
     }
     animation: ${appearFromLeft} 1s;
 `; 
@@ -62,6 +80,9 @@ export const Content = styled.div`
         padding-bottom: 0;
         height: 3rem;
         width: 100%;
+        @media(max-width: 600px){
+            margin-bottom: 2rem;
+        }
 
     }
 
@@ -69,7 +90,7 @@ export const Content = styled.div`
     button {
         flex: 1 1 200px;
         margin: 8px;
-        max-width: 20%;
+        max-width: 30%;
         max-height: 20%;
         background: var(--titles);
         //background: #000;
@@ -77,6 +98,10 @@ export const Content = styled.div`
         box-sizing: border-box;
         border-radius: 5px;
         cursor: auto;
+        @media(max-width: 600px){
+            max-width: 50%;
+        }
+        
 
         img {
             max-width: 100%;
@@ -124,6 +149,25 @@ export const Content = styled.div`
             height: 2rem;
             font-size: 0.9rem;
             font-weight: 600;
+
+            @media(max-width: 765px){
+                margin: auto;
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: 1rem;
+                font-size: 0.7rem;
+            }
+
+            @media(max-width: 600px){
+                margin: auto;
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: 1rem;
+                font-size: 0.9rem;
+
+            }
+            
+            
         }
     }
 
