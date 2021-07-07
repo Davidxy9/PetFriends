@@ -43,19 +43,30 @@ export const ContainerStart = styled.div`
 `;
 
 export const ContainerCart = styled.div`
-  @media (max-width: 600px) {
-    display: none;
-  }
+  /* @media (max-width: 600px) {
+    //display: none;
+    width: 100%;
+    padding: auto 2rem;
+    margin-left: 2rem 2rem;
+  } */
 
   align-self: center;
 
   svg {
     margin-right: 1rem;
+  
+    @media (max-width: 600px){
+      margin-right: 2rem;
+    }
   }
 
   span {
     font-weight: bold;
     color: #3F3F3F;
+      @media (max-width: 600px){
+        padding: 1rem -10rem;
+        margin: auto -2rem;
+      }
 
   }
 
