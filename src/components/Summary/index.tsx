@@ -7,10 +7,10 @@ import { ProductContext } from '../../contexts/ProductContext';
 import {
   Container,
   Opt,
-  ContainerCarrinho,
-  ContainerInicio,
-  CardMeio,
-  LinhaMeio,
+  ContainerCart,
+  ContainerStart,
+  CardMid,
+  LinhaMid,
 } from './styles';
 
 
@@ -22,14 +22,14 @@ export function Summary() {
     <Container>
       {/*  */}
       <img src={storeImg2} alt='Im agem da loja' />
-      <CardMeio>
+      <CardMid>
         {/* div parte de cima */}
-        <ContainerInicio>
+        <ContainerStart>
           <strong>Pet Friends Acessories</strong>
           {/* <img src={clockImg} alt='Imagem relógio' /> */}
           <FaRegClock color={'#1BBB16'} />
           <p>ABERTO AGORA</p>
-        </ContainerInicio>
+        </ContainerStart>
         {/* fim da div parte de cima */}
 
         <p>
@@ -43,11 +43,11 @@ export function Summary() {
           <span>Entrega: </span>
           <p>A partir de R$ 3,00</p>
         </Opt>
-      </CardMeio>
+      </CardMid>
 
-      <LinhaMeio />
+      <LinhaMid />
 
-      <ContainerCarrinho>
+      <ContainerCart>
         {/* <img src={carImg} alt='Carrinho de compras' /> */}
         <FaShoppingCart />
         <span>{productCart} Produtos no carrinho</span>
@@ -57,7 +57,7 @@ export function Summary() {
                             currency: 'BRL'
                         }).format(productValue * productCart)}
           </p>
-      </ContainerCarrinho>
+      </ContainerCart>
       {/*  */}
     </Container>
   );

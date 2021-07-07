@@ -18,7 +18,7 @@ export const Container = styled.div`
   }
 `;
 
-export const ContainerInicio = styled.div`
+export const ContainerStart = styled.div`
   display: flex;
   align-items: center;
 
@@ -42,7 +42,7 @@ export const ContainerInicio = styled.div`
   }
 `;
 
-export const ContainerCarrinho = styled.div`
+export const ContainerCart = styled.div`
   @media (max-width: 600px) {
     display: none;
   }
@@ -66,11 +66,11 @@ export const ContainerCarrinho = styled.div`
   }
 `;
 
-export const CardMeio = styled.div`
+export const CardMid = styled.div`
   margin: 0 auto 0 2rem;
 `;
 
-export const LinhaMeio = styled.div`
+export const LinhaMid = styled.div`
   @media (max-width: 600px) {
     display: none;
   }
