@@ -44,6 +44,14 @@ export const Container = styled.div`
             text-decoration: underline;
         }
 
+        @media(max-width: 1000px){
+            width: 5%;
+        }
+
+        @media(max-width: 845px){
+            width: 10%;
+        }
+
         @media(max-width: 765px){
             width: 8%;
         }
