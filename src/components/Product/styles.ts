@@ -1,22 +1,18 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+const appearFromLeft = keyframes`
+    from{
+    opacity: 0;
+    transform: translateX(-50px);
+  }to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
 
 export const Container = styled.div`
-    /* background: #F3F3F4;
-    display: flex;
-    width: 100%;
-    margin: auto;
-    input {
-        border: 0;
-        border: 2px solid #DDDDDD;
-        box-sizing: border-box;
-        height: 40px;
-        width: 440px;
-        padding: 0 24px;
-        border-radius: 3px;
-        background: #FFFFFF;
-        color: #898989;
-
-    } */
+ 
     background: #F3F3F4;
     width: 100%;
 `;
@@ -46,7 +42,10 @@ export const Separator = styled.div`
         box-sizing: border-box;
         border-radius: 5px 0 0 5px;
     }
+    animation: ${appearFromLeft} 1s;
 `; 
+
+
 
 export const Content = styled.div`
     display: flex;
@@ -128,7 +127,7 @@ export const Content = styled.div`
         }
     }
 
-   
+    animation: ${appearFromLeft} 1s;
   
 `;
 

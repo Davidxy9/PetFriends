@@ -44,7 +44,7 @@ export const ContainerStart = styled.div`
 
 export const ContainerCart = styled.div`
   @media (max-width: 600px) {
-    display: none;
+    //display: none;
   }
 
   align-self: center;
